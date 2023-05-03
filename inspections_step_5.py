@@ -7,22 +7,23 @@ Created on Fri Apr  7 13:33:55 2023
 
 # NYC Restaurant Inspection Results - STEP 5
 
-# We have a new dataframe 'trim' which is more or less the data we will visualize
-# using Tableau.
+# We have a new dataframe 'trim' which will be imported into Tableau as a CSV file for 
+# visualization.
 
-# Let's do some additional cleaning of trim and add a few columns for better visualization:
-    # Filter out duplicate and missing records for latitude and longitude coordinates 
-    # Spell out abbreviations in street addresses, where possible
-    # Standardize and clean-up the street addresses, where possible
-    # Create three new variables to color code inspection grades in Tableau
-    # Count the number of resturants with unsatisfactory grades ('B' and 'C')
+# Let's do some additional cleaning of trim and add some useful columns 
+
+# This script focuses on the following:
+#   a. Filtering out duplicate and missing records for latitude and longitude coordinates 
+#   b. Spelling out abbreviations in street address
+#   c. Standardizing and cleaning-up the street names
+#   d. Creating three new variables to color code inspection grades in Tableau
 
 # Import the pandas module to begin.
 import pandas as pd
 
 usable = pd.read_pickle('usable.pkl')
 
-#%% Drop duplicate records in trim
+#%% Drop Duplicate Records in 'trim'
 
 trim = pd.read_csv('trim.csv', index_col=[0]) # the second argument removes the Unamed:0 column
 
@@ -30,6 +31,7 @@ trim = trim.sort_values('camis')
 trim = trim.drop_duplicates(subset = 'camis', keep='last') # Most recent record will be kept
 
 #%% Spell out abbreviations and fix spacing in street addresses
+
 fix_list = {
     'Ave':'Avenue',
     'Rd': 'Road',
@@ -60,6 +62,11 @@ trim = trim.loc[~((trim['lat'] == 0) & (trim['long'] == 0))] # drops records whe
 # equal to 0
 
 #%% New variables for color selection into Tableau Tool Tips
+
+# The intention is to use the traffic light color palette to aid in visualization.
+# Grade 'A' - green
+# Grade 'B' - yellow
+# Grade 'C' - red
 
 grade = trim['grade']
 trim['tt_a'] = grade.where(grade == 'A', "")

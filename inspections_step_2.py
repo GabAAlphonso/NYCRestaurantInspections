@@ -6,12 +6,16 @@ Created on Fri Apr  7 13:33:54 2023
 """
 # NYC Restaurant Inspection Results - STEP 2
 
-# In this script the data cleaning process continues.
-# Restuarant names are standardized and a comparison of the number of violations
-# in facilities with multiple locatios across the five boroughs is done.
+# This script focuses on the following:
+#   a. Data cleaning
+#   b. Standardizing restaurant names
+#   c. Do initial analyses on the number of violations in facilities with multiple 
+#      locatios across the five boroughs
 
-# Import the pandas and matplotlib modules to begin.
+# Import Pandas to begin.
 import pandas as pd
+
+#%% Standardize Names
 
 usable = pd.read_pickle('usable.pkl')
 
@@ -29,11 +33,16 @@ std_dba = std_dba.apply(lambda x: ' '.join(x.upper().split()))
 
 # Add std_dba as a column to locations dataframe.
 locations['std_dba'] = std_dba
-#%%
+
+#%% Standardize Facility Street Information
+
+# Take a look at the data in this column. Street information is all in capital letters
+# This will not make for good visualization on Tableau.
 # Capitalize each word in the 'street' column
 usable['street'] =  usable['street'].str.title()
 
-#%%
+#%% Some Analysis
+
 # Possibly, there are facilities with multiple locations across NYC.
 # Compare the number of violations of these facilties.
 # Do they differ?
