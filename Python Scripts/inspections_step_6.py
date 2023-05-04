@@ -33,9 +33,9 @@ print(by_cuisine_most.sort_values(ascending=False))
 
 trim_cuisine = trim[ trim['cuisine'].isin(by_cuisine_most.index) ]
 
-fig,ax = plt.subplots(figsize=(6,10))
+fig,ax = plt.subplots(figsize=(20,10))
 sns.set_theme(style="darkgrid")
-sns.countplot(data=trim_cuisine, y='cuisine', ax=ax, ec = 'black')
+sns.countplot(data=trim_cuisine, y='cuisine', order = trim_cuisine['cuisine'].value_counts(ascending = False).index, ax=ax, ec = 'black')
 ax.set_title('Restaurant Count by Food Type/Cuisine', fontweight = 'bold',  size = 14)
 ax.set_xlabel('Count', fontweight = 'bold', size = 12 )
 ax.set_ylabel('Food Type/Cuisine', fontweight = 'bold', size = 12)
@@ -47,9 +47,9 @@ fig.savefig('count_cuisine_foodtype.png')
 by_boro = trim['boro'].value_counts()
 print(by_boro)
 
-fig,ax = plt.subplots()
+fig,ax = plt.subplots(figsize=(10,6))
 sns.set_theme(style="darkgrid")
-sns.countplot(data=trim,y='boro',ax=ax, palette = 'magma', ec = 'black')
+sns.countplot(data=trim,y='boro',ax=ax, order = trim['boro'].value_counts(ascending = False).index, palette = 'magma', ec = 'black')
 ax.set_title('Restaurant Count by Borough', fontweight = 'bold', size = 14)
 ax.set_xlabel('Count', fontweight = 'bold', size = 12 )
 ax.set_ylabel('Borough', fontweight = 'bold', size = 12)
