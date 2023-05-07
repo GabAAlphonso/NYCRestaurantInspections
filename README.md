@@ -16,24 +16,24 @@ The analyses are supported by visualizations which give insight into grade varia
 
 ### **Structure and Use of Repository Files**
 ***
-The main directory contains an information file and two subdirectories: *Python Scripts* and *Tableau*.
+The main directory contains an information file and two subdirectories: *PythonScripts* and *Tableau*.
 
 #### *A. [Information File](About_NYC_Restaurant_Inspection_Data_on_NYC_OpenData_Information_File.pdf)*
 This file serves as a guide to explain the records in the dataset, particularly how scores and grades are assigned based on the types of violations and inspections. Some parts of this file are referenced as comments in the Python scripts.
 
-#### *B. [Python Scripts](Python%20Scripts)*
+#### *B. [PythonScripts](https://github.com/GabAAlphonso/NYCRestaurantInspections/tree/main/Python%20Scripts)*
 This subdirectory contains the scripts (collection of codes) created to clean the input data and produce a simplified version of the dataset for import into Tableau for visualization. 
 
 - Input Data File: 
     - The scripts are built to run using the the file *[NYC_Restaurant_Inspection_Results.csv](NYC_Restaurant_Inspection_Results.csv)*, which was downloaded on March 8, 2023. To download the latest dataset, go to the [*NYC Open Data*](https://data.cityofnewyork.us/Health/DOHMH-New-York-City-Restaurant-Inspection-Results/43nn-pn8j), click 'Export' and be sure to download the New York City Restaurant Inspection Results as CSV.
 
 - Run Scripts: 
-    - There are six scripts which must be executed in logical sequence beginning with inspections_step_1.py. More information on each script is detailed [here]().
+    - There are six scripts which must be executed in logical sequence beginning with inspections_step_1.py. More information on each script is detailed [here](https://github.com/GabAAlphonso/NYCRestaurantInspections/blob/main/Python%20Scripts/README.md).
         
 
 - Output Data Files: 
     - Three files are built when the scripts listed above are ran on a Python interpreter:
-        - [trim.CSV](trim.csv): this is main output file containing 12,332 records of active restaurants. Among the 18 variables, those of most relevance for visualization include: 'grade', 'score', 'boro'(borough), 'year' (year of inspection), 'std_dba'(restaurant name) and 'lat' and 'long' (geographic coordinates).
+        - [trim.CSV](https://github.com/GabAAlphonso/NYCRestaurantInspections/blob/main/Python%20Scripts/trim.csv): this is main output file containing 12,332 records of active restaurants. Among the 18 variables, those of most relevance for visualization include: 'grade', 'score', 'boro'(borough), 'year' (year of inspection), 'std_dba'(restaurant name) and 'lat' and 'long' (geographic coordinates).
         - [count_boro.png](count_boro.png): this figure shows the count (or number) of restaurants in each of the five boroughs.
         - [count_cuisine_foodtype.png](count_cuisine_foodtype.png): this figure shows the count (or number) of restaurants by food type/cuisine. Note: Only food type/cuisine with a minimum count of 100 is shown.
 
@@ -52,8 +52,8 @@ This subdirectory contains the following files:
 ---
  In this dataset, most of the restaurants are located in Manhattan, while Staten Island has the lowest count among the five boroughs (Figure 1). Among the inspected restaurants, ‘American’ type food or cuisine has the largest count (Figure 2) and the greatest share of grade ‘A’ (Figure 3).
 
- ![Figure 1: Restaurant Count by Borough](count_boro.png)
+ ![Figure 1: Restaurant Count by Borough](https://github.com/GabAAlphonso/NYCRestaurantInspections/blob/main/Python%20Scripts/count_boro.png)
  
-Using the interactive dashboard created in Tableau, users can dig deeper into the data by filtering on demand, hovering over and selecting different visuals. By exploring the underlying information on restaurant inspections, users can determine for themselves whether possible biases exist in the inspection grading system exist. 
+Using the interactive dashboard created in Tableau, users can dig deeper into the data by filtering, hovering over and selecting different visuals. By exploring the underlying information on restaurant inspections, users can determine for themselves whether possible biases exist in the inspection grading system exist. 
 
 It is also important to consider how easily facilities can comply with State health code regulations because of well-developed and fully implemented food safety plans. In the prevention of foodborne outbreaks and as an FDA requirement, every food service operator is required to have a food safety or HACCP plan that identifies foreseeable hazards, and details written procedures to prevent, control and correct the occurrence of same in its facility. Franchise food operators may have better implementation and monitoring of food safety plans and therefore, compliance with State health code is easier. The opposite may be true for smaller, family-owned establishments in which poorly designed and/or implemented food safety plans contribute in part to reduced compliance with the health code resulting in lower inspection score and grade. 
