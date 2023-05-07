@@ -10,7 +10,7 @@ Created on Fri Apr  7 13:33:54 2023
 #   a. Data cleaning
 #   b. Standardizing restaurant names
 #   c. Do initial analyses on the number of violations in facilities with multiple 
-#      locatios across the five boroughs
+#      locations across the five boroughs
 
 # Import Pandas to begin.
 import pandas as pd

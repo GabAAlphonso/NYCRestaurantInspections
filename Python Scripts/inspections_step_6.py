@@ -12,9 +12,9 @@ Created on Sun Apr 16 13:49:40 2023
 # food type/cuisine and  another that gives the count of resturants by borough.
 
 # For the sake of clarity, do note that 'cuisine' from now onward is referred to as 'food type/cuisine'.
-# The dataset references food in terms of 'cuisine' which we know refers to a cooking style or method
+# The dataset references food in terms of 'cuisine' which actually means a cooking style or method
 # that is distinctive of a country or region. However, donuts, sandwiches, juice, smoothies, etc. are not
-# really cuisine but rather types of food. Hence the distinction moving forward.
+# cuisine but rather types of food. Hence the distinction moving forward.
 
 # Import Pandas, Matplotlib and Seaborn to begin.
 import pandas as pd
