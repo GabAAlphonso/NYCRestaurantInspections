@@ -21,7 +21,7 @@ The main directory contains an information file and two subdirectories: *PythonS
 #### *A. [Information File](About_NYC_Restaurant_Inspection_Data_on_NYC_OpenData_Information_File.pdf)*
 This file serves as a guide to explain the records in the dataset, particularly how scores and grades are assigned based on the types of violations and inspections. Some parts of this file are referenced as comments in the Python scripts.
 
-#### *B. [PythonScripts](https://github.com/GabAAlphonso/NYCRestaurantInspections/tree/main/PythonScripts)*
+#### *B. [PythonScripts](PythonScripts/)*
 This subdirectory contains the scripts (collection of codes) created to clean the input data and produce a simplified version of the dataset for import into Tableau for visualization. 
 
 - Input Data File: 
@@ -37,7 +37,7 @@ This subdirectory contains the scripts (collection of codes) created to clean th
         - [count_boro.png](PythonScripts/count_boro.png): this figure shows the count (or number) of restaurants in each of the five boroughs.
         - [count_cuisine_foodtype.png](PythonScripts/count_cuisine_foodtype.png): this figure shows the count (or number) of restaurants by food type/cuisine. Note: Only food type/cuisine with a minimum count of 100 is shown.
 
-#### *C. [Tableau](https://github.com/GabAAlphonso/NYCRestaurantInspections/tree/main/Tableau)*
+#### *C. [Tableau](Tableau/)*
 This subdirectory contains the following files:
  - [trim.CSV](Tableau/trim.csv): the main output file built when Python scripts are run. Once imported into Tableau, the data is used to create several visualizations.
  - [NYC-Resturant-Inspections-Visualization.twb](Tableau/NYC-Resturant-Inspections-Visualization.twb): In this workbook, there are four worksheets:
@@ -56,7 +56,7 @@ This subdirectory contains the following files:
 
  ![Grade by Food Type/Cuisine](PythonScripts/count_cuisine_foodtype.png "Figure 2: Restaurant Count by Food Type/Cuisine")
 
-  ![Share of Grades Screen Shot](PythonScripts/count_cuisine_foodtype.png "Figure 3: Share of Grade by Food Type/Cuisine")
+  ![Share of Grades Screen Shot](Tableau/Share_ofGrades_byFoodType_Cuisine.png "Figure 3: Share of Grade by Food Type/Cuisine")
  
 Using the interactive dashboard created in Tableau, users can dig deeper into the data by filtering, hovering over and selecting different visuals. By exploring the underlying information on restaurant inspections, users can determine for themselves whether possible biases exist in the inspection grading system exist. 
 
